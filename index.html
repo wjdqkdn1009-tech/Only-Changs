@@ -10,60 +10,70 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 40px 16px;
 }
 
-/* 카드 형태 */
+/* 메인 영역 */
 .container {
   background: #ffffff;
-  width: 90%;
-  max-width: 420px;
+  width: 100%;
+  max-width: 900px;              /* ⬅ PC에서 훨씬 넓게 */
   border-radius: 12px;
-  padding: 24px 20px 28px;
+  padding: 32px 28px 36px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   text-align: center;
 }
 
 /* 로고 */
 img {
-  max-width: 55%;
+  max-width: 45%;                /* ⬅ 화면 커질수록 로고도 큼 */
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 /* 임원 정보 */
 .ceo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   color: #007bff;
   margin-top: 6px;
 }
 
 .pr {
-  font-size: 16px;
+  font-size: 17px;
   color: #5bc0eb;
   margin-top: 4px;
 }
 
 /* 구분선 */
 .divider {
-  margin: 18px 0 14px;
+  margin: 24px 0 18px;
   height: 1px;
   background: #e0e0e0;
 }
 
 /* 선수 목록 */
 .players {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* 선수 한 줄 */
 .player {
-  font-size: 15px;
+  font-size: 16px;
   color: #333;
-  padding: 6px 0;
+  padding: 8px 0;
+}
+
+/* 📱 모바일에서는 자동으로 조정 */
+@media (max-width: 600px) {
+  img {
+    max-width: 65%;
+  }
+  .container {
+    padding: 24px 18px;
+  }
 }
 </style>
 </head>
