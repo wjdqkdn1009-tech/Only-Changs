@@ -11,97 +11,94 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* 전체 영역 */
+/* 화면 전체를 채우는 래퍼 */
+.wrapper {
+  min-height: 100vh;                 /* 🔥 화면 높이 꽉 채움 */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;           /* 위쪽 기준 */
+}
+
+/* 메인 콘텐츠 */
 .container {
   background: #ffffff;
   width: 100%;
-  max-width: 1000px;      /* PC에서는 넓게 */
-  margin: 0 auto;
-  padding: 28px 16px 36px;
+  max-width: 1000px;
+  padding: 20px 16px 24px;           /* 위아래 여백 최소화 */
   box-sizing: border-box;
   text-align: center;
 }
 
 /* 로고 */
 img {
-  width: 100%;            /* 모바일에서 꽉 차게 */
-  max-width: 420px;       /* 너무 커지지는 않게 */
+  width: 100%;
+  max-width: 450px;
   height: auto;
-  margin: 0 auto 12px;
   display: block;
+  margin: 0 auto 8px;                /* 이미지 아래 공백 줄임 */
 }
 
 /* 임원 정보 */
 .ceo {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   color: #007bff;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .pr {
-  font-size: 18px;
+  font-size: 19px;
   color: #5bc0eb;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 /* 구분선 */
 .divider {
-  margin: 22px 0 16px;
+  margin: 16px 0 12px;
   height: 1px;
   background: #e0e0e0;
 }
 
 /* 선수 목록 */
 .players {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* 선수 한 줄 */
 .player {
-  font-size: 17px;
+  font-size: 18px;
   color: #333;
-  padding: 8px 0;
+  padding: 6px 0;
 }
 
-/* 📱 모바일에서 더 크게 */
+/* 모바일에서 더 꽉 차게 */
 @media (max-width: 600px) {
   .container {
-    padding: 24px 14px 32px;
+    padding: 16px 12px 20px;
   }
 
-  .ceo {
-    font-size: 24px;
-  }
-
-  .pr {
-    font-size: 19px;
-  }
-
-  .players {
-    font-size: 21px;
-  }
-
-  .player {
-    font-size: 18px;
+  img {
+    max-width: 100%;
   }
 }
 </style>
 </head>
 <body>
-  <div class="container">
-    <img src="Only-Changs.png" alt="Only Changs Logo">
+  <div class="wrapper">
+    <div class="container">
+      <img src="Only-Changs.png" alt="Only Changs Logo">
 
-    <div class="ceo">대표이사: 오성준</div>
-    <div class="pr">홍보이사: 안준호</div>
+      <div class="ceo">대표이사: 오성준</div>
+      <div class="pr">홍보이사: 안준호</div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="players">선수목록</div>
-    <div class="player">1등선수 · 손창현</div>
-    <div class="player">2등선수 · 노재민</div>
+      <div class="players">선수목록</div>
+      <div class="player">1등선수 · 손창현</div>
+      <div class="player">2등선수 · 노재민</div>
+    </div>
   </div>
 </body>
-</html
+</html>
