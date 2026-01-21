@@ -11,34 +11,30 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* 화면 전체를 채우는 래퍼 */
 .wrapper {
-  min-height: 100vh;                 /* 🔥 화면 높이 꽉 채움 */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;           /* 위쪽 기준 */
+  align-items: flex-start;
 }
 
-/* 메인 콘텐츠 */
 .container {
   background: #ffffff;
   width: 100%;
   max-width: 1000px;
-  padding: 20px 16px 24px;           /* 위아래 여백 최소화 */
+  padding: 20px 16px 24px;
   box-sizing: border-box;
   text-align: center;
 }
 
-/* 로고 */
 img {
   width: 100%;
   max-width: 450px;
   height: auto;
   display: block;
-  margin: 0 auto 8px;                /* 이미지 아래 공백 줄임 */
+  margin: 0 auto 8px;
 }
 
-/* 임원 정보 */
 .ceo {
   font-size: 24px;
   font-weight: bold;
@@ -52,28 +48,43 @@ img {
   margin-top: 2px;
 }
 
-/* 구분선 */
+/* ✅ 남청색 감독 */
+.coach {
+  font-size: 17px;
+  color: #0b3c5d;   /* 남청색 */
+  margin-top: 4px;
+}
+
 .divider {
   margin: 16px 0 12px;
   height: 1px;
   background: #e0e0e0;
 }
 
-/* 선수 목록 */
 .players {
   font-size: 21px;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-/* 선수 한 줄 */
 .player {
   font-size: 18px;
   color: #333;
   padding: 6px 0;
 }
 
-/* 모바일에서 더 꽉 차게 */
+/* 오른쪽 맨 아래 고정 */
+.owner {
+  position: fixed;
+  right: 12px;
+  bottom: 10px;
+  font-size: 14px;
+  color: #666;
+  background: rgba(255,255,255,0.85);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 16px 12px 20px;
@@ -81,6 +92,12 @@ img {
 
   img {
     max-width: 100%;
+  }
+
+  .owner {
+    font-size: 13px;
+    right: 8px;
+    bottom: 8px;
   }
 }
 </style>
@@ -92,6 +109,7 @@ img {
 
       <div class="ceo">대표이사: 오성준</div>
       <div class="pr">홍보이사: 안준호</div>
+      <div class="coach">감독: 구성모</div>
 
       <div class="divider"></div>
 
@@ -100,5 +118,7 @@ img {
       <div class="player">2등선수 · 노재민</div>
     </div>
   </div>
+
+  <div class="owner">사장: 서동현</div>
 </body>
 </html>
