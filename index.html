@@ -3,32 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Only Changs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
   margin: 0;
   background: #f4f6f8;
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  padding: 40px 16px;
 }
 
-/* 메인 영역 */
+/* 전체 영역 */
 .container {
   background: #ffffff;
   width: 100%;
-  max-width: 900px;              /* ⬅ PC에서 훨씬 넓게 */
-  border-radius: 12px;
-  padding: 32px 28px 36px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 1000px;      /* PC에서는 넓게 */
+  margin: 0 auto;
+  padding: 28px 16px 36px;
+  box-sizing: border-box;
   text-align: center;
 }
 
 /* 로고 */
 img {
-  max-width: 45%;                /* ⬅ 화면 커질수록 로고도 큼 */
+  width: 100%;            /* 모바일에서 꽉 차게 */
+  max-width: 420px;       /* 너무 커지지는 않게 */
   height: auto;
-  margin-bottom: 14px;
+  margin: 0 auto 12px;
+  display: block;
 }
 
 /* 임원 정보 */
@@ -40,14 +40,14 @@ img {
 }
 
 .pr {
-  font-size: 17px;
+  font-size: 18px;
   color: #5bc0eb;
   margin-top: 4px;
 }
 
 /* 구분선 */
 .divider {
-  margin: 24px 0 18px;
+  margin: 22px 0 16px;
   height: 1px;
   background: #e0e0e0;
 }
@@ -56,23 +56,36 @@ img {
 .players {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* 선수 한 줄 */
 .player {
-  font-size: 16px;
+  font-size: 17px;
   color: #333;
   padding: 8px 0;
 }
 
-/* 📱 모바일에서는 자동으로 조정 */
+/* 📱 모바일에서 더 크게 */
 @media (max-width: 600px) {
-  img {
-    max-width: 65%;
-  }
   .container {
-    padding: 24px 18px;
+    padding: 24px 14px 32px;
+  }
+
+  .ceo {
+    font-size: 24px;
+  }
+
+  .pr {
+    font-size: 19px;
+  }
+
+  .players {
+    font-size: 21px;
+  }
+
+  .player {
+    font-size: 18px;
   }
 }
 </style>
@@ -91,4 +104,4 @@ img {
     <div class="player">2등선수 · 노재민</div>
   </div>
 </body>
-</html>
+</html
