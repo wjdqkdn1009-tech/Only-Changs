@@ -1,124 +1,89 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Only Changs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-  margin: 0;
-  background: #f4f6f8;
-  font-family: Arial, sans-serif;
-}
+  <!-- 문자 인코딩 -->
+  <meta charset="UTF-8">
 
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
+  <!-- 모바일 화면 최적화 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-.container {
-  background: #ffffff;
-  width: 100%;
-  max-width: 1000px;
-  padding: 20px 16px 24px;
-  box-sizing: border-box;
-  text-align: center;
-}
+  <title>Only Changs</title>
 
-img {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  display: block;
-  margin: 0 auto 8px;
-}
+  <style>
+    /* 전체 배경과 기본 글꼴 */
+    body{
+      margin:0;
+      background:#f4f6f8;
+      font-family:Arial,sans-serif;
+    }
 
-.ceo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #007bff;
-  margin-top: 4px;
-}
+    /* 메인 콘텐츠 영역 (화면 높이 꽉 채움) */
+    .container{
+      min-height:100vh;
+      max-width:1000px;
+      margin:0 auto;
+      padding:16px;
+      background:#fff;
+      text-align:center;
+      box-sizing:border-box;
+    }
 
-.pr {
-  font-size: 19px;
-  color: #5bc0eb;
-  margin-top: 2px;
-}
+    /* 로고 이미지 */
+    img{
+      width:100%;
+      max-width:450px;
+      margin:0 auto 8px;
+      display:block;
+    }
 
-/* ✅ 남청색 감독 */
-.coach {
-  font-size: 17px;
-  color: #0b3c5d;   /* 남청색 */
-  margin-top: 4px;
-}
+    /* 임원 정보 */
+    .ceo{font-size:24px;font-weight:bold;color:#007bff}      /* 대표이사 */
+    .pr{font-size:19px;color:#5bc0eb;margin-top:2px}         /* 홍보이사 */
+    .coach{font-size:17px;color:#0b3c5d;margin-top:4px}      /* 감독 (남청색) */
 
-.divider {
-  margin: 16px 0 12px;
-  height: 1px;
-  background: #e0e0e0;
-}
+    /* 구분선 */
+    .divider{
+      height:1px;
+      background:#e0e0e0;
+      margin:16px 0;
+    }
 
-.players {
-  font-size: 21px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
+    /* 선수 목록 */
+    .players{font-size:21px;font-weight:bold;margin-bottom:8px}
+    .player{font-size:18px;color:#333;padding:6px 0}
 
-.player {
-  font-size: 18px;
-  color: #333;
-  padding: 6px 0;
-}
-
-/* 오른쪽 맨 아래 고정 */
-.owner {
-  position: fixed;
-  right: 12px;
-  bottom: 10px;
-  font-size: 14px;
-  color: #666;
-  background: rgba(255,255,255,0.85);
-  padding: 4px 8px;
-  border-radius: 6px;
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 16px 12px 20px;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  .owner {
-    font-size: 13px;
-    right: 8px;
-    bottom: 8px;
-  }
-}
-</style>
+    /* 오른쪽 맨 아래 고정 문구 (사장) */
+    .owner{
+      position:fixed;               /* 화면 기준 고정 */
+      right:10px;
+      bottom:8px;
+      font-size:14px;
+      color:#666;
+      background:rgba(255,255,255,.85);
+      padding:4px 8px;
+      border-radius:6px;
+    }
+  </style>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="container">
-      <img src="Only-Changs.png" alt="Only Changs Logo">
 
-      <div class="ceo">대표이사: 오성준</div>
-      <div class="pr">홍보이사: 안준호</div>
-      <div class="coach">감독: 구성모</div>
+  <!-- 메인 콘텐츠 -->
+  <div class="container">
+    <img src="Only-Changs.png" alt="Only Changs Logo">
 
-      <div class="divider"></div>
+    <div class="ceo">대표이사: 오성준</div>
+    <div class="pr">홍보이사: 안준호</div>
+    <div class="coach">감독: 구성모</div>
 
-      <div class="players">선수목록</div>
-      <div class="player">1등선수 · 손창현</div>
-      <div class="player">2등선수 · 노재민</div>
-    </div>
+    <div class="divider"></div>
+
+    <div class="players">선수목록</div>
+    <div class="player">1등선수 · 손창현</div>
+    <div class="player">2등선수 · 노재민</div>
   </div>
 
+  <!-- 항상 오른쪽 아래에 표시 -->
   <div class="owner">사장: 서동현</div>
+
 </body>
 </html>
