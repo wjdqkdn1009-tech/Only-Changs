@@ -33,20 +33,35 @@
     .players{font-size:21px;font-weight:bold;margin-bottom:8px}
     .player{font-size:18px;color:#333;padding:6px 0}
 
-    /* 사이트 하단 문구 */
+    /* 📄 PDF 가로 넘김 영역 */
+    .pdf-wrapper{
+      width:100%;
+      overflow-x:auto;          /* 가로 스크롤 허용 */
+      -webkit-overflow-scrolling:touch;
+      margin-top:8px;
+    }
+
+    .pdf-wrapper iframe{
+      width:1200px;             /* 가로로 넘기게 만드는 핵심 */
+      height:70vh;
+      border:none;
+    }
+
+    /* 모바일 최적화 */
+    @media (max-width: 768px){
+      .pdf-wrapper iframe{
+        width:1600px;           /* 모바일에서 더 확실히 가로 넘김 */
+        height:65vh;
+      }
+    }
+
+    /* 사이트 하단 */
     .owner{
       margin-top:24px;
       padding-top:12px;
       border-top:1px solid #e0e0e0;
       font-size:14px;
       color:#666;
-    }
-
-    iframe{
-      width:100%;
-      height:700px;
-      border:none;
-      margin-top:8px;
     }
   </style>
 </head>
@@ -68,9 +83,13 @@
 
     <div class="divider"></div>
     <div class="players">회사 소개 자료</div>
-    <iframe src="Only-Changs-ppt.pdf"></iframe>
 
-    <!-- ✅ 사이트 맨 아래 -->
+    <!-- ✅ 가로로 넘겨보는 PDF -->
+    <div class="pdf-wrapper">
+      <iframe src="Only-Changs-ppt.pdf"></iframe>
+    </div>
+
+    <!-- 사이트 맨 아래 -->
     <div class="owner">사장: 서동현</div>
   </div>
 
