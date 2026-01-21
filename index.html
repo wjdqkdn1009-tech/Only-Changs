@@ -8,33 +8,40 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;   /* ⬅ 중앙이 아니라 위쪽 정렬 */
+  padding-top: 40px;         /* ⬅ 전체를 위로 올림 */
   background: #ffffff;
   font-family: Arial, sans-serif;
 }
+
 .container {
   text-align: center;
 }
+
 img {
+  display: block;
+  margin: 0 auto 6px auto;   /* ⬅ 이미지 아래 여백 최소화 */
   max-width: 60%;
   height: auto;
 }
+
 .ceo {
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 20px;
   font-weight: bold;
   color: #007bff;
 }
+
 .pr {
-  margin-top: 4px;
+  margin-top: 2px;
   font-size: 16px;
   color: #5bc0eb;
 }
+
 .players {
-  margin-top: 16px;
+  margin-top: 10px;
   font-size: 18px;
-  font-weight: bold;   /* 🔥 진하게 */
+  font-weight: bold;
   color: #000000;
 }
 </style>
