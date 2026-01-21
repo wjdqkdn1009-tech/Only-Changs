@@ -33,7 +33,7 @@
     .players{font-size:21px;font-weight:bold;margin-bottom:8px}
     .player{font-size:18px;color:#333;padding:6px 0}
 
-    /* 📄 PDF 가로 넘김 */
+    /* 📄 PDF 가로 넘김 (PC용) */
     .pdf-wrapper{
       width:100%;
       overflow-x:auto;
@@ -45,14 +45,29 @@
       height:70vh;
       border:none;
     }
-    @media (max-width:768px){
-      .pdf-wrapper iframe{
-        width:1600px;
-        height:65vh;
-      }
+
+    /* 📱 모바일 PDF 버튼 */
+    .mobile-pdf{
+      display:none;
+      margin:12px 0;
+    }
+    .mobile-pdf a{
+      display:inline-block;
+      padding:12px 18px;
+      background:#007bff;
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      font-size:16px;
     }
 
-    /* ✅ 오른쪽 아래 고정 사장 문구 */
+    /* 모바일에서는 iframe 숨기고 버튼만 */
+    @media (max-width:768px){
+      .pdf-wrapper{display:none;}
+      .mobile-pdf{display:block;}
+    }
+
+    /* 오른쪽 아래 고정 */
     .owner{
       position:fixed;
       right:12px;
@@ -85,6 +100,14 @@
     <div class="divider"></div>
     <div class="players">회사 소개 자료</div>
 
+    <!-- 📱 모바일용 PDF 열기 버튼 -->
+    <div class="mobile-pdf">
+      <a href="Only-Changs-ppt.pdf" target="_blank">
+        📄 발표자료(PDF) 열기
+      </a>
+    </div>
+
+    <!-- 💻 PC용 PDF 미리보기 -->
     <div class="pdf-wrapper">
       <iframe src="Only-Changs-ppt.pdf"></iframe>
     </div>
@@ -95,4 +118,3 @@
 
 </body>
 </html>
-
