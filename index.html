@@ -33,35 +33,36 @@
     .players{font-size:21px;font-weight:bold;margin-bottom:8px}
     .player{font-size:18px;color:#333;padding:6px 0}
 
-    /* 📄 PDF 가로 넘김 영역 */
+    /* 📄 PDF 가로 넘김 */
     .pdf-wrapper{
       width:100%;
-      overflow-x:auto;          /* 가로 스크롤 허용 */
+      overflow-x:auto;
       -webkit-overflow-scrolling:touch;
       margin-top:8px;
     }
-
     .pdf-wrapper iframe{
-      width:1200px;             /* 가로로 넘기게 만드는 핵심 */
+      width:1200px;
       height:70vh;
       border:none;
     }
-
-    /* 모바일 최적화 */
-    @media (max-width: 768px){
+    @media (max-width:768px){
       .pdf-wrapper iframe{
-        width:1600px;           /* 모바일에서 더 확실히 가로 넘김 */
+        width:1600px;
         height:65vh;
       }
     }
 
-    /* 사이트 하단 */
+    /* ✅ 오른쪽 아래 고정 사장 문구 */
     .owner{
-      margin-top:24px;
-      padding-top:12px;
-      border-top:1px solid #e0e0e0;
+      position:fixed;
+      right:12px;
+      bottom:10px;
       font-size:14px;
       color:#666;
+      background:rgba(255,255,255,0.85);
+      padding:6px 10px;
+      border-radius:6px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
     }
   </style>
 </head>
@@ -84,14 +85,14 @@
     <div class="divider"></div>
     <div class="players">회사 소개 자료</div>
 
-    <!-- ✅ 가로로 넘겨보는 PDF -->
     <div class="pdf-wrapper">
       <iframe src="Only-Changs-ppt.pdf"></iframe>
     </div>
-
-    <!-- 사이트 맨 아래 -->
-    <div class="owner">사장: 서동현</div>
   </div>
+
+  <!-- 항상 오른쪽 아래 -->
+  <div class="owner">사장: 서동현</div>
 
 </body>
 </html>
+
