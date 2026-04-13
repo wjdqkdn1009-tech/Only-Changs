@@ -4,118 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Only Changs</title>
-
-  <style>
-    body{
-      margin:0;
-      background:#f4f6f8;
-      font-family:Arial,sans-serif;
-    }
-    .container{
-      min-height:100vh;
-      max-width:1000px;
-      margin:0 auto;
-      padding:16px;
-      background:#fff;
-      text-align:center;
-      box-sizing:border-box;
-    }
-    img{
-      width:100%;
-      max-width:450px;
-      margin:0 auto 8px;
-      display:block;
-    }
-    .ceo{font-size:24px;font-weight:bold;color:#007bff}
-    .pr{font-size:19px;color:#5bc0eb;margin-top:2px}
-    .coach{font-size:17px;color:#0b3c5d;margin-top:4px}
-    .divider{height:1px;background:#e0e0e0;margin:16px 0}
-    .players{font-size:21px;font-weight:bold;margin-bottom:8px}
-    .player{font-size:18px;color:#333;padding:6px 0}
-
-    /* 📄 PDF 가로 넘김 (PC용) */
-    .pdf-wrapper{
-      width:100%;
-      overflow-x:auto;
-      -webkit-overflow-scrolling:touch;
-      margin-top:8px;
-    }
-    .pdf-wrapper iframe{
-      width:1200px;
-      height:70vh;
-      border:none;
-    }
-
-    /* 📱 모바일 PDF 버튼 */
-    .mobile-pdf{
-      display:none;
-      margin:12px 0;
-    }
-    .mobile-pdf a{
-      display:inline-block;
-      padding:12px 18px;
-      background:#007bff;
-      color:#fff;
-      text-decoration:none;
-      border-radius:8px;
-      font-size:16px;
-    }
-
-    /* 모바일에서는 iframe 숨기고 버튼만 */
-    @media (max-width:768px){
-      .pdf-wrapper{display:none;}
-      .mobile-pdf{display:block;}
-    }
-
-    /* 오른쪽 아래 고정 */
-    .owner{
-      position:fixed;
-      right:12px;
-      bottom:10px;
-      font-size:14px;
-      color:#666;
-      background:rgba(255,255,255,0.85);
-      padding:6px 10px;
-      border-radius:6px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.08);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="container">
-    <img src="Only-Changs.png" alt="Only Changs Logo">
+    <img class="main-logo" src="Only-Changs.png" alt="Only Changs Logo">
 
-    <div class="ceo">대표이사: 서동현</div>
+    <div class="ceo">대표이사: 오성준</div>
     <div class="pr">홍보이사: 안준호</div>
     <div class="coach">감독: 구성모</div>
 
     <div class="divider"></div>
 
     <div class="players">선수목록</div>
-    <div class="player">1등선수 · 손창현</div>
-    <div class="player">2등선수 · 노재민</div>
-    <div class="player">3등선수 · 고유</div>
 
-    <div class="divider"></div>
-    <div class="players">회사 소개 자료</div>
-
-    <!-- 📱 모바일용 PDF 열기 버튼 -->
-    <div class="mobile-pdf">
-      <a href="Only-Changs-ppt.pdf" target="_blank">
-        📄 발표자료(PDF) 열기
-      </a>
+    <div class="player">
+      <span class="player-img"></span>
+      <span>1등선수 · 손창현</span>
     </div>
 
-    <!-- 💻 PC용 PDF 미리보기 -->
+    <div class="player">
+      <span class="player-img"></span>
+      <span>2등선수 · 노재민</span>
+    </div>
+
+    <div class="player">
+      <span class="player-img"></span>
+      <span>3등선수 · 고유</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="players">회사 소개 자료</div>
+
+    <div class="mobile-pdf">
+      <a href="Only-Changs-ppt.pdf" target="_blank">📄 발표자료(PDF) 열기</a>
+    </div>
+
     <div class="pdf-wrapper">
       <iframe src="Only-Changs-ppt.pdf"></iframe>
     </div>
   </div>
 
-  <!-- 항상 오른쪽 아래 -->
   <div class="owner">사장: 서동현</div>
 
 </body>
 </html>
-
