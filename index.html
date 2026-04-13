@@ -1,59 +1,97 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- 문자 인코딩 설정 -->
   <meta charset="UTF-8">
+
+  <!-- 모바일 화면 대응 -->
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- 브라우저 탭 제목 -->
   <title>Only Changs</title>
+
+  <!-- 외부 CSS 파일 연결 -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- 전체 사이트 내용을 감싸는 메인 박스 -->
   <div class="container">
+
+    <!-- 메인 로고 이미지 -->
     <img class="main-logo" src="Only-Changs.png" alt="Only Changs Logo">
 
+    <!-- 회사 주요 인물 소개 -->
     <div class="ceo">대표이사: 안준호</div>
     <div class="pr">홍보이사: 김상겸</div>
     <div class="coach">감독: 구성모</div>
 
+    <!-- 구분선 -->
     <div class="divider"></div>
 
+    <!-- 선수목록 제목 -->
     <div class="players">선수목록</div>
 
+    <!-- 1등선수 (클릭 시 손창현 프로필 팝업 열기) -->
     <div class="player" onclick="showProfile('son')">
+      <!-- 선수 프로필 사진 자리 (현재는 회색 원) -->
       <span class="player-img"></span>
+      <!-- 선수 이름 -->
       <span>1등선수 · 손창현</span>
     </div>
 
+    <!-- 2등선수 (클릭 시 노재민 프로필 팝업 열기) -->
     <div class="player" onclick="showProfile('no')">
+      <!-- 선수 프로필 사진 자리 -->
       <span class="player-img"></span>
+      <!-- 선수 이름 -->
       <span>2등선수 · 노재민</span>
     </div>
 
+    <!-- 3등선수 (클릭 시 고유 프로필 팝업 열기) -->
     <div class="player" onclick="showProfile('go')">
+      <!-- 선수 프로필 사진 자리 -->
       <span class="player-img"></span>
+      <!-- 선수 이름 -->
       <span>3등선수 · 고유</span>
     </div>
 
+    <!-- 구분선 -->
     <div class="divider"></div>
 
+    <!-- 회사 소개 자료 제목 -->
     <div class="players">회사 소개 자료</div>
 
+    <!-- 모바일에서는 PDF 미리보기 대신 버튼만 표시 -->
     <div class="mobile-pdf">
       <a href="Only-Changs-ppt.pdf" target="_blank">📄 발표자료(PDF) 열기</a>
     </div>
 
+    <!-- PC에서는 사이트 안에서 PDF 미리보기 -->
     <div class="pdf-wrapper">
       <iframe src="Only-Changs-ppt.pdf"></iframe>
     </div>
   </div>
 
+  <!-- 화면 오른쪽 아래 고정 문구 -->
   <div class="owner">사장: 서동현</div>
 
-  <!-- 선수 상세 프로필 팝업 -->
+  <!-- =========================
+       선수 상세 프로필 팝업 영역
+       (기본은 숨김 상태)
+  ========================== -->
   <div id="profileModal" class="modal">
+
+    <!-- 팝업 내부 내용 박스 -->
     <div class="modal-content">
+
+      <!-- 팝업 닫기 버튼 -->
       <span class="close-btn" onclick="closeProfile()">&times;</span>
+
+      <!-- 선수 이름 -->
       <h2 id="profileName"></h2>
+
+      <!-- 선수 상세 정보 -->
       <p id="profileRank"></p>
       <p id="profilePosition"></p>
       <p id="profileStyle"></p>
@@ -61,6 +99,7 @@
     </div>
   </div>
 
+  <!-- 외부 JS 파일 연결 (반드시 body 맨 아래에 두는 게 안전) -->
   <script src="script.js"></script>
 </body>
 </html>
