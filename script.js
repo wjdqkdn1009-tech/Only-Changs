@@ -1,3 +1,6 @@
+/* =========================
+   선수별 상세 프로필 데이터
+========================= */
 const profiles = {
   son: {
     name: "손창현",
@@ -22,25 +25,43 @@ const profiles = {
   }
 };
 
+/* =========================
+   선수 클릭 시 프로필 팝업 열기
+========================= */
 function showProfile(playerKey){
+  /* 선택한 선수 데이터 가져오기 */
   const profile = profiles[playerKey];
+
+  /* 데이터가 없으면 종료 */
   if (!profile) return;
 
+  /* 팝업 안에 선수 정보 넣기 */
   document.getElementById("profileName").textContent = profile.name;
   document.getElementById("profileRank").textContent = profile.rank;
   document.getElementById("profilePosition").textContent = profile.position;
   document.getElementById("profileStyle").textContent = profile.style;
   document.getElementById("profileIntro").textContent = profile.intro;
 
+  /* 팝업 보이기 */
   document.getElementById("profileModal").style.display = "block";
 }
 
+/* =========================
+   팝업 닫기
+========================= */
 function closeProfile(){
+  /* 팝업 숨기기 */
   document.getElementById("profileModal").style.display = "none";
 }
 
+/* =========================
+   팝업 바깥(배경) 클릭 시 닫기
+========================= */
 window.onclick = function(event){
+  /* 팝업 전체 영역 가져오기 */
   const modal = document.getElementById("profileModal");
+
+  /* 배경 클릭 시 팝업 닫기 */
   if (event.target === modal) {
     modal.style.display = "none";
   }
