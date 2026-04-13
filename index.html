@@ -78,15 +78,21 @@
 
   <!-- =========================
        선수 상세 프로필 팝업 영역
-       (기본은 숨김 상태)
+       기본은 숨김 상태
   ========================== -->
   <div id="profileModal" class="modal">
 
-    <!-- 팝업 내부 내용 박스 -->
+    <!-- 팝업 내부 카드 -->
     <div class="modal-content">
 
       <!-- 팝업 닫기 버튼 -->
       <span class="close-btn" onclick="closeProfile()">&times;</span>
+
+      <!-- 선수 순위 배지 (No.1 / No.2 / No.3) -->
+      <div id="profileBadge" class="profile-badge"></div>
+
+      <!-- 팝업 안의 큰 원형 프로필 자리 -->
+      <div id="profileLargeImg" class="profile-large-img"></div>
 
       <!-- 선수 이름 -->
       <h2 id="profileName"></h2>
@@ -99,7 +105,7 @@
     </div>
   </div>
 
-  <!-- 외부 JS 파일 연결 (반드시 body 맨 아래에 두는 게 안전) -->
+  <!-- 외부 JS 파일 연결 -->
   <script src="script.js"></script>
 </body>
 </html>
