@@ -5,23 +5,23 @@ const profiles = {
   son: {
     name: "손창현",
     rank: "등수: 1등선수",
-    position: "포지션: 공격수",
-    style: "플레이 스타일: 빠른 판단력과 강한 돌파력",
-    intro: "소개: 팀의 핵심 공격 자원으로, 결정적인 순간에 흐름을 바꾸는 선수."
+    position: "포지션: No.1 에이스",
+    style: "플레이 스타일: 압도적인 존재감과 치명적인 승부 감각",
+    intro: "소개: 눈빛 하나로 분위기를 장악하는 팀의 No.1. 강렬한 임팩트와 확실한 결과로 언제나 중심에 서는 선수."
   },
   no: {
     name: "노재민",
     rank: "등수: 2등선수",
-    position: "포지션: 미드필더",
-    style: "플레이 스타일: 안정적인 경기 운영과 넓은 시야",
-    intro: "소개: 팀의 밸런스를 잡아 주는 선수로, 공격과 수비를 자연스럽게 연결한다."
+    position: "포지션: 분위기 메이커",
+    style: "플레이 스타일: 세련된 운영과 안정적인 리듬 조율",
+    intro: "소개: 부드러운 미소 뒤에 숨겨진 냉정한 판단력. 편안하게 다가오지만 끝내 가장 깊게 기억되는 선수."
   },
   go: {
     name: "고유",
     rank: "등수: 3등선수",
-    position: "포지션: 수비수",
-    style: "플레이 스타일: 침착한 수비와 꾸준한 집중력",
-    intro: "소개: 눈에 띄지는 않지만 팀을 지탱하는 묵묵한 활약이 강점인 선수."
+    position: "포지션: 반전의 히든카드",
+    style: "플레이 스타일: 조용한 카리스마와 묵직한 한 방",
+    intro: "소개: 말보다 결과로 증명하는 스타일. 조용히 흐름을 읽고 결정적인 순간 반드시 존재감을 남기는 선수."
   }
 };
 
@@ -42,27 +42,33 @@ function showProfile(playerKey){
   document.getElementById("profileStyle").textContent = profile.style;
   document.getElementById("profileIntro").textContent = profile.intro;
 
+  /* 팝업 전체 영역 가져오기 */
+  const modal = document.getElementById("profileModal");
+
   /* 팝업 보이기 */
-  document.getElementById("profileModal").style.display = "block";
+  modal.style.display = "block";
 }
 
 /* =========================
    팝업 닫기
 ========================= */
 function closeProfile(){
+  /* 팝업 전체 영역 가져오기 */
+  const modal = document.getElementById("profileModal");
+
   /* 팝업 숨기기 */
-  document.getElementById("profileModal").style.display = "none";
+  modal.style.display = "none";
 }
 
 /* =========================
    팝업 바깥(배경) 클릭 시 닫기
 ========================= */
-window.onclick = function(event){
+window.addEventListener("click", function(event){
   /* 팝업 전체 영역 가져오기 */
   const modal = document.getElementById("profileModal");
 
-  /* 배경 클릭 시 팝업 닫기 */
+  /* 배경(검정 영역) 클릭 시 닫기 */
   if (event.target === modal) {
     modal.style.display = "none";
   }
-};
+});
