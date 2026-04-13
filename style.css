@@ -1,138 +1,225 @@
-/* 전체 페이지 기본 설정 */
+/* =========================
+   전체 페이지 기본 설정
+========================= */
 body{
   margin:0;                         /* 브라우저 기본 여백 제거 */
-  background:#f4f6f8;               /* 연한 회색 배경 */
+  background:#f4f6f8;               /* 전체 배경색 */
   font-family:Arial,sans-serif;     /* 기본 글꼴 */
 }
 
-/* 메인 콘텐츠 영역 */
+/* =========================
+   메인 콘텐츠 영역
+========================= */
 .container{
   min-height:100vh;                 /* 최소 높이를 화면 전체로 */
   max-width:1000px;                 /* 최대 너비 제한 */
   margin:0 auto;                    /* 가운데 정렬 */
   padding:16px;                     /* 안쪽 여백 */
   background:#fff;                  /* 흰색 배경 */
-  text-align:center;                /* 내부 글자 가운데 정렬 */
+  text-align:center;                /* 내부 텍스트 가운데 정렬 */
   box-sizing:border-box;            /* padding 포함 크기 계산 */
 }
 
-/* 메인 로고 이미지 */
+/* =========================
+   메인 로고 이미지
+========================= */
 .main-logo{
-  width:100%;                       /* 부모 너비 기준 꽉 차게 */
+  width:100%;                       /* 부모 너비 기준 */
   max-width:450px;                  /* 최대 크기 제한 */
   margin:0 auto 8px;                /* 가운데 정렬 + 아래 여백 */
-  display:block;                    /* 이미지 줄바꿈 처리 */
+  display:block;                    /* 줄바꿈 처리 */
 }
 
-/* 대표이사 텍스트 */
+/* =========================
+   회사 주요 인물 텍스트
+========================= */
 .ceo{
-  font-size:24px;                   /* 글자 크기 */
+  font-size:24px;                   /* 대표이사 글자 크기 */
   font-weight:bold;                 /* 굵게 */
   color:#007bff;                    /* 파란색 */
 }
 
-/* 홍보이사 텍스트 */
 .pr{
-  font-size:19px;
+  font-size:19px;                   /* 홍보이사 글자 크기 */
   color:#5bc0eb;                    /* 하늘색 */
-  margin-top:2px;                   /* 위쪽 간격 */
+  margin-top:2px;                   /* 위 간격 */
 }
 
-/* 감독 텍스트 */
 .coach{
-  font-size:17px;
+  font-size:17px;                   /* 감독 글자 크기 */
   color:#0b3c5d;                    /* 남청색 */
-  margin-top:4px;
+  margin-top:4px;                   /* 위 간격 */
 }
 
-/* 구분선 */
+/* =========================
+   구분선
+========================= */
 .divider{
   height:1px;                       /* 선 두께 */
   background:#e0e0e0;               /* 연한 회색 */
-  margin:16px 0;                    /* 위아래 여백 */
+  margin:16px 0;                    /* 위아래 간격 */
 }
 
-/* 섹션 제목 (선수목록, 회사 소개 자료 등) */
+/* =========================
+   섹션 제목 (선수목록, 회사 소개 자료)
+========================= */
 .players{
-  font-size:21px;
-  font-weight:bold;
-  margin-bottom:8px;
+  font-size:21px;                   /* 제목 크기 */
+  font-weight:bold;                 /* 굵게 */
+  margin-bottom:8px;                /* 아래 간격 */
 }
 
-/* 선수 한 줄 */
+/* =========================
+   선수 한 줄
+========================= */
 .player{
-  font-size:18px;
-  color:#333;
+  font-size:18px;                   /* 선수 글자 크기 */
+  color:#333;                       /* 글자색 */
   padding:8px 0;                    /* 위아래 간격 */
   display:flex;                     /* 가로 정렬 */
   align-items:center;               /* 세로 가운데 */
   justify-content:center;           /* 전체 가운데 */
-  gap:10px;                         /* 프로필 자리와 이름 간격 */
+  gap:10px;                         /* 사진과 이름 간격 */
+  cursor:pointer;                   /* 클릭 가능 표시 */
 }
 
-/* 선수 프로필 사진 자리 (현재는 회색 원) */
+/* 마우스를 올렸을 때 살짝 강조 */
+.player:hover{
+  opacity:0.85;
+}
+
+/* =========================
+   선수 프로필 사진 자리 (임시 회색 원)
+========================= */
 .player-img{
-  width:42px;
-  height:42px;
+  width:42px;                       /* 가로 크기 */
+  height:42px;                      /* 세로 크기 */
   border-radius:50%;                /* 원형 */
-  background:#d9d9d9;               /* 임시 회색 배경 */
-  display:inline-block;
+  background:#d9d9d9;               /* 회색 배경 */
+  display:inline-block;             /* 인라인 블록 */
   border:2px solid #e0e0e0;         /* 연한 테두리 */
   flex-shrink:0;                    /* 줄어들지 않게 */
 }
 
-/* PC에서 PDF를 사이트 안에서 보여주는 영역 */
+/* =========================
+   PC용 PDF 미리보기 영역
+========================= */
 .pdf-wrapper{
-  width:100%;
+  width:100%;                       /* 전체 너비 */
   overflow-x:auto;                  /* 가로 스크롤 허용 */
-  -webkit-overflow-scrolling:touch; /* 모바일 스크롤 부드럽게 */
-  margin-top:8px;
+  -webkit-overflow-scrolling:touch; /* 스크롤 부드럽게 */
+  margin-top:8px;                   /* 위 간격 */
 }
 
 /* PDF iframe */
 .pdf-wrapper iframe{
-  width:1200px;                     /* 가로 넓게 잡아서 스크롤 유도 */
+  width:1200px;                     /* 넓게 잡아서 가로 스크롤 가능 */
   height:70vh;                      /* 화면 높이의 70% */
   border:none;                      /* 테두리 제거 */
 }
 
-/* 모바일용 PDF 열기 버튼 영역 (기본은 숨김) */
+/* =========================
+   모바일용 PDF 버튼
+========================= */
 .mobile-pdf{
-  display:none;
-  margin:12px 0;
+  display:none;                     /* 기본은 숨김 */
+  margin:12px 0;                    /* 위아래 간격 */
 }
 
-/* 모바일 PDF 버튼 스타일 */
 .mobile-pdf a{
-  display:inline-block;
-  padding:12px 18px;
-  background:#007bff;               /* 파란 버튼 */
+  display:inline-block;             /* 버튼처럼 표시 */
+  padding:12px 18px;                /* 안쪽 여백 */
+  background:#007bff;               /* 파란 배경 */
   color:#fff;                       /* 흰 글씨 */
   text-decoration:none;             /* 밑줄 제거 */
   border-radius:8px;                /* 둥근 모서리 */
-  font-size:16px;
+  font-size:16px;                   /* 글자 크기 */
 }
 
-/* 사장 문구 (오른쪽 아래 고정) */
+/* =========================
+   오른쪽 아래 고정 문구
+========================= */
 .owner{
   position:fixed;                   /* 화면 기준 고정 */
   right:12px;                       /* 오른쪽 여백 */
   bottom:10px;                      /* 아래 여백 */
-  font-size:14px;
-  color:#666;
-  background:rgba(255,255,255,0.85);/* 반투명 흰 배경 */
-  padding:6px 10px;
-  border-radius:6px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.08); /* 살짝 그림자 */
+  font-size:14px;                   /* 글자 크기 */
+  color:#666;                       /* 글자색 */
+  background:rgba(255,255,255,0.85);/* 반투명 배경 */
+  padding:6px 10px;                 /* 안쪽 여백 */
+  border-radius:6px;                /* 둥근 모서리 */
+  box-shadow:0 2px 6px rgba(0,0,0,0.08); /* 그림자 */
 }
 
-/* 모바일 화면(768px 이하) 전용 설정 */
+/* =========================
+   프로필 팝업 배경
+========================= */
+.modal{
+  display:none;                     /* 기본은 숨김 */
+  position:fixed;                   /* 화면 전체 덮기 */
+  z-index:1000;                     /* 다른 요소 위에 표시 */
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);       /* 반투명 검정 배경 */
+}
+
+/* =========================
+   프로필 팝업 내용 박스
+========================= */
+.modal-content{
+  background:#fff;                  /* 흰색 배경 */
+  width:90%;                        /* 화면 기준 너비 */
+  max-width:420px;                  /* 최대 너비 */
+  margin:15% auto;                  /* 가운데 정렬 */
+  padding:24px 20px;                /* 안쪽 여백 */
+  border-radius:12px;               /* 둥근 모서리 */
+  text-align:left;                  /* 왼쪽 정렬 */
+  box-sizing:border-box;            /* padding 포함 계산 */
+  position:relative;                /* 닫기 버튼 기준 */
+}
+
+/* =========================
+   팝업 닫기 버튼
+========================= */
+.close-btn{
+  position:absolute;                /* 박스 안에서 위치 고정 */
+  top:10px;                         /* 위쪽 */
+  right:14px;                       /* 오른쪽 */
+  font-size:28px;                   /* 크기 */
+  cursor:pointer;                   /* 클릭 가능 */
+  color:#666;                       /* 글자색 */
+}
+
+/* 팝업 제목 */
+.modal-content h2{
+  margin-top:0;                     /* 위 여백 제거 */
+  color:#007bff;                    /* 파란색 */
+}
+
+/* 팝업 본문 */
+.modal-content p{
+  margin:10px 0;                    /* 문단 간격 */
+  color:#333;                       /* 글자색 */
+  line-height:1.5;                  /* 줄 간격 */
+}
+
+/* =========================
+   모바일 화면 전용 설정
+========================= */
 @media (max-width:768px){
   .pdf-wrapper{
-    display:none;                   /* 모바일에서는 PDF 미리보기 숨김 */
+    display:none;                   /* 모바일에서는 iframe 숨김 */
   }
 
   .mobile-pdf{
-    display:block;                  /* 모바일에서는 버튼 표시 */
+    display:block;                  /* 모바일에서는 PDF 버튼 표시 */
+  }
+
+  .modal-content{
+    margin:25% auto;                /* 모바일에서 팝업 위치 조금 아래 */
+  }
+}
   }
 }
