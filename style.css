@@ -1,205 +1,249 @@
 /* =========================
    전체 페이지 기본 설정
+   팝업 카드와 비슷한 어두운 분위기의 배경
 ========================= */
 body{
-  margin:0;                         /* 브라우저 기본 여백 제거 */
-  background:#f4f6f8;               /* 전체 배경색 */
-  font-family:Arial,sans-serif;     /* 기본 글꼴 */
+  margin:0;                                           /* 브라우저 기본 여백 제거 */
+  background:linear-gradient(180deg,#111 0%, #1b1b1b 100%); /* 전체 배경을 어둡게 */
+  font-family:Arial,sans-serif;                       /* 기본 글꼴 */
+  color:#f5f5f5;                                      /* 기본 글자색을 밝게 */
 }
 
 /* =========================
    메인 콘텐츠 영역
+   사이트 전체를 하나의 큰 카드처럼 보이게 만듦
 ========================= */
 .container{
-  min-height:100vh;                 /* 최소 높이를 화면 전체로 */
-  max-width:1000px;                 /* 최대 너비 제한 */
-  margin:0 auto;                    /* 가운데 정렬 */
-  padding:16px;                     /* 안쪽 여백 */
-  background:#fff;                  /* 흰색 배경 */
-  text-align:center;                /* 내부 텍스트 가운데 정렬 */
-  box-sizing:border-box;            /* padding 포함 크기 계산 */
+  min-height:100vh;                                   /* 최소 높이를 화면 전체로 */
+  max-width:1000px;                                   /* 최대 너비 제한 */
+  margin:0 auto;                                      /* 가운데 정렬 */
+  padding:24px 18px 40px;                             /* 안쪽 여백 */
+  background:linear-gradient(180deg,#1b1b1b 0%, #111 100%); /* 팝업 카드와 비슷한 배경 */
+  border-left:1px solid rgba(212,175,55,0.18);        /* 금색 포인트 테두리 */
+  border-right:1px solid rgba(212,175,55,0.18);
+  box-sizing:border-box;                              /* padding 포함 계산 */
+  text-align:center;                                  /* 내부 텍스트 가운데 정렬 */
+  box-shadow:
+    0 0 24px rgba(0,0,0,0.25),
+    0 0 16px rgba(212,175,55,0.06);                   /* 은은한 금색 빛 */
 }
 
 /* =========================
    메인 로고 이미지
 ========================= */
 .main-logo{
-  width:100%;                       /* 부모 너비 기준 */
-  max-width:450px;                  /* 최대 크기 제한 */
-  margin:0 auto 8px;                /* 가운데 정렬 + 아래 여백 */
-  display:block;                    /* 줄바꿈 처리 */
+  width:100%;                                         /* 부모 너비 기준 */
+  max-width:450px;                                    /* 최대 크기 제한 */
+  margin:0 auto 12px;                                 /* 가운데 정렬 + 아래 여백 */
+  display:block;                                      /* 줄바꿈 처리 */
+  filter:drop-shadow(0 4px 12px rgba(0,0,0,0.35));   /* 로고 그림자 */
 }
 
 /* =========================
    회사 주요 인물 텍스트
 ========================= */
 .ceo{
-  font-size:24px;                   /* 대표이사 글자 크기 */
-  font-weight:bold;                 /* 굵게 */
-  color:#007bff;                    /* 파란색 */
+  font-size:26px;                                     /* 대표이사 글자 크기 */
+  font-weight:bold;                                   /* 굵게 */
+  color:#d4af37;                                      /* 금색 */
+  text-shadow:0 0 8px rgba(212,175,55,0.15);          /* 은은한 금색 빛 */
 }
 
 .pr{
-  font-size:19px;                   /* 홍보이사 글자 크기 */
-  color:#5bc0eb;                    /* 하늘색 */
-  margin-top:2px;                   /* 위 간격 */
+  font-size:19px;                                     /* 홍보이사 글자 크기 */
+  color:#f3d46b;                                      /* 밝은 금색 */
+  margin-top:6px;                                     /* 위 간격 */
 }
 
 .coach{
-  font-size:17px;                   /* 감독 글자 크기 */
-  color:#0b3c5d;                    /* 남청색 */
-  margin-top:4px;                   /* 위 간격 */
+  font-size:17px;                                     /* 감독 글자 크기 */
+  color:#c8d8ff;                                      /* 차분한 푸른빛 */
+  margin-top:6px;                                     /* 위 간격 */
 }
 
 /* =========================
    구분선
 ========================= */
 .divider{
-  height:1px;                       /* 선 두께 */
-  background:#e0e0e0;               /* 연한 회색 */
-  margin:16px 0;                    /* 위아래 간격 */
+  height:1px;                                         /* 선 두께 */
+  background:linear-gradient(
+    90deg,
+    rgba(212,175,55,0) 0%,
+    rgba(212,175,55,0.55) 50%,
+    rgba(212,175,55,0) 100%
+  );                                                  /* 가운데만 빛나는 금색 구분선 */
+  margin:20px 0;                                      /* 위아래 간격 */
 }
 
 /* =========================
    섹션 제목
+   선수목록, 회사 소개 자료 등
 ========================= */
 .players{
-  font-size:21px;                   /* 제목 크기 */
-  font-weight:bold;                 /* 굵게 */
-  margin-bottom:8px;                /* 아래 간격 */
+  font-size:22px;                                     /* 제목 크기 */
+  font-weight:bold;                                   /* 굵게 */
+  margin-bottom:12px;                                 /* 아래 간격 */
+  color:#d4af37;                                      /* 금색 */
+  letter-spacing:0.5px;                               /* 자간 */
+  text-shadow:0 0 8px rgba(212,175,55,0.12);          /* 은은한 금색 빛 */
 }
 
 /* =========================
    선수 한 줄
+   팝업 카드 느낌으로 어두운 박스 처리
 ========================= */
 .player{
-  font-size:18px;                   /* 선수 글자 크기 */
-  color:#333;                       /* 글자색 */
-  padding:8px 0;                    /* 위아래 간격 */
-  display:flex;                     /* 가로 정렬 */
-  align-items:center;               /* 세로 가운데 */
-  justify-content:center;           /* 전체 가운데 */
-  gap:10px;                         /* 사진과 이름 간격 */
-  cursor:pointer;                   /* 클릭 가능 표시 */
-  transition:0.2s;                  /* 부드러운 효과 */
+  font-size:18px;                                     /* 선수 글자 크기 */
+  color:#f3f3f3;                                      /* 밝은 글자색 */
+  margin:10px auto;                                   /* 위아래 간격 */
+  padding:14px 16px;                                  /* 안쪽 여백 */
+  max-width:520px;                                    /* 카드 최대 너비 */
+  display:flex;                                       /* 가로 정렬 */
+  align-items:center;                                 /* 세로 가운데 */
+  justify-content:center;                             /* 가운데 정렬 */
+  gap:12px;                                           /* 프로필 자리와 이름 간격 */
+  cursor:pointer;                                     /* 클릭 가능 표시 */
+  border:1px solid rgba(212,175,55,0.22);             /* 금색 테두리 */
+  border-radius:14px;                                 /* 둥근 모서리 */
+  background:rgba(255,255,255,0.03);                  /* 아주 어두운 카드 배경 */
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.18),
+    0 0 10px rgba(212,175,55,0.04);                   /* 은은한 빛 */
+  transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-/* 선수에 마우스를 올렸을 때 강조 */
+/* 선수 카드에 마우스를 올렸을 때 */
 .player:hover{
-  background:#f7f9fc;               /* 연한 배경 */
-  border-radius:8px;                /* 둥근 모서리 */
-  transform:scale(1.01);            /* 살짝 확대 */
+  background:rgba(212,175,55,0.08);                   /* 살짝 금색 느낌 */
+  transform:translateY(-2px) scale(1.01);             /* 위로 살짝 뜨기 */
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.28),
+    0 0 14px rgba(212,175,55,0.12);
 }
 
 /* =========================
    선수 프로필 사진 자리 (목록용)
 ========================= */
 .player-img{
-  width:42px;                       /* 가로 크기 */
-  height:42px;                      /* 세로 크기 */
-  border-radius:50%;                /* 원형 */
-  background:#d9d9d9;               /* 회색 배경 */
-  display:inline-block;             /* 인라인 블록 */
-  border:2px solid #e0e0e0;         /* 연한 테두리 */
-  flex-shrink:0;                    /* 줄어들지 않게 */
+  width:42px;                                         /* 가로 크기 */
+  height:42px;                                        /* 세로 크기 */
+  border-radius:50%;                                  /* 원형 */
+  background:radial-gradient(circle at 30% 30%, #d9d9d9 0%, #9f9f9f 100%); /* 금속 느낌 */
+  display:inline-block;                               /* 인라인 블록 */
+  border:2px solid #d4af37;                           /* 금색 테두리 */
+  box-shadow:0 0 0 4px rgba(212,175,55,0.06);         /* 금색 바깥 빛 */
+  flex-shrink:0;                                      /* 줄어들지 않게 */
 }
 
 /* =========================
    PC용 PDF 미리보기 영역
+   메인 카드와 분위기 통일
 ========================= */
 .pdf-wrapper{
-  width:100%;                       /* 전체 너비 */
-  overflow-x:auto;                  /* 가로 스크롤 허용 */
-  -webkit-overflow-scrolling:touch; /* 부드러운 스크롤 */
-  margin-top:8px;                   /* 위 간격 */
+  width:100%;                                         /* 전체 너비 */
+  overflow-x:auto;                                    /* 가로 스크롤 허용 */
+  -webkit-overflow-scrolling:touch;                   /* 부드러운 스크롤 */
+  margin-top:12px;                                    /* 위 간격 */
+  padding:10px;                                       /* 안쪽 여백 */
+  border:1px solid rgba(212,175,55,0.18);             /* 금색 테두리 */
+  border-radius:14px;                                 /* 둥근 모서리 */
+  background:rgba(255,255,255,0.03);                  /* 어두운 카드 배경 */
+  box-sizing:border-box;
 }
 
 /* PDF iframe */
 .pdf-wrapper iframe{
-  width:1200px;                     /* 넓게 잡아서 가로 스크롤 가능 */
-  height:70vh;                      /* 화면 높이의 70% */
-  border:none;                      /* 테두리 제거 */
+  width:1200px;                                       /* 넓게 잡아서 가로 스크롤 가능 */
+  height:70vh;                                        /* 화면 높이의 70% */
+  border:none;                                        /* 테두리 제거 */
+  background:#fff;                                    /* PDF 자체 배경 */
+  border-radius:8px;                                  /* 모서리 둥글게 */
 }
 
 /* =========================
    모바일용 PDF 버튼
 ========================= */
 .mobile-pdf{
-  display:none;                     /* 기본은 숨김 */
-  margin:12px 0;                    /* 위아래 간격 */
+  display:none;                                       /* 기본은 숨김 */
+  margin:14px 0;                                      /* 위아래 간격 */
 }
 
 .mobile-pdf a{
-  display:inline-block;             /* 버튼처럼 표시 */
-  padding:12px 18px;                /* 안쪽 여백 */
-  background:#007bff;               /* 파란 배경 */
-  color:#fff;                       /* 흰 글씨 */
-  text-decoration:none;             /* 밑줄 제거 */
-  border-radius:8px;                /* 둥근 모서리 */
-  font-size:16px;                   /* 글자 크기 */
+  display:inline-block;                               /* 버튼처럼 표시 */
+  padding:12px 20px;                                  /* 안쪽 여백 */
+  background:linear-gradient(180deg,#f3d46b 0%, #d4af37 100%); /* 금색 버튼 */
+  color:#111;                                         /* 어두운 글자 */
+  text-decoration:none;                               /* 밑줄 제거 */
+  border-radius:999px;                                /* 알약 형태 */
+  font-size:16px;                                     /* 글자 크기 */
+  font-weight:bold;                                   /* 굵게 */
+  box-shadow:0 6px 14px rgba(212,175,55,0.18);        /* 버튼 그림자 */
 }
 
 /* =========================
    오른쪽 아래 고정 문구
 ========================= */
 .owner{
-  position:fixed;                   /* 화면 기준 고정 */
-  right:12px;                       /* 오른쪽 여백 */
-  bottom:10px;                      /* 아래 여백 */
-  font-size:14px;                   /* 글자 크기 */
-  color:#666;                       /* 글자색 */
-  background:rgba(255,255,255,0.85);/* 반투명 배경 */
-  padding:6px 10px;                 /* 안쪽 여백 */
-  border-radius:6px;                /* 둥근 모서리 */
-  box-shadow:0 2px 6px rgba(0,0,0,0.08); /* 그림자 */
-  z-index:900;                      /* 팝업보다 아래 */
+  position:fixed;                                     /* 화면 기준 고정 */
+  right:12px;                                         /* 오른쪽 여백 */
+  bottom:10px;                                        /* 아래 여백 */
+  font-size:14px;                                     /* 글자 크기 */
+  color:#111;                                         /* 어두운 글자 */
+  background:linear-gradient(180deg,#f3d46b 0%, #d4af37 100%); /* 금색 배경 */
+  padding:6px 12px;                                   /* 안쪽 여백 */
+  border-radius:999px;                                /* 알약 형태 */
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.18),
+    0 0 10px rgba(212,175,55,0.18);                   /* 금색 빛 */
+  z-index:900;                                        /* 팝업보다 아래 */
+  font-weight:bold;                                   /* 굵게 */
 }
 
 /* =========================
    팝업 배경
 ========================= */
 .modal{
-  display:none;                     /* 기본은 숨김 */
-  position:fixed;                   /* 화면 전체 기준 */
+  display:none;                                       /* 기본은 숨김 */
+  position:fixed;                                     /* 화면 전체 기준 */
   left:0;
   top:0;
   width:100%;
   height:100%;
-  z-index:1000;                     /* 다른 요소보다 위 */
-  background:rgba(0,0,0,0.72);      /* 진한 반투명 배경 */
-  overflow:auto;                    /* 내용이 길면 스크롤 */
-  backdrop-filter:blur(2px);        /* 뒤 배경 흐림 */
+  z-index:1000;                                       /* 다른 요소보다 위 */
+  background:rgba(0,0,0,0.72);                        /* 진한 반투명 배경 */
+  overflow:auto;                                      /* 내용이 길면 스크롤 */
+  backdrop-filter:blur(2px);                          /* 뒤 배경 흐림 */
 }
 
-/* 팝업이 열렸을 때 보이도록 처리 */
+/* 팝업이 열렸을 때 */
 .modal.show{
   display:block;
-  animation:fadeIn 0.25s ease-out;  /* 팝업 배경 부드럽게 등장 */
+  animation:fadeIn 0.25s ease-out;                    /* 배경 부드럽게 등장 */
 }
 
 /* =========================
    팝업 내부 카드
 ========================= */
 .modal-content{
-  position:relative;                /* 닫기 버튼 기준 */
+  position:relative;                                  /* 닫기 버튼 기준 */
   width:90%;
   max-width:460px;
-  margin:8vh auto;                  /* 화면 중앙 쪽 배치 */
+  margin:8vh auto;                                    /* 화면 중앙 쪽 배치 */
   padding:28px 22px;
   background:linear-gradient(180deg,#1b1b1b 0%, #111 100%);
-  border:1px solid #d4af37;         /* 금색 테두리 */
-  border-radius:16px;               /* 둥근 모서리 */
+  border:1px solid #d4af37;                           /* 금색 테두리 */
+  border-radius:16px;                                 /* 둥근 모서리 */
   box-sizing:border-box;
   text-align:left;
   color:#f5f5f5;
   box-shadow:
     0 12px 30px rgba(0,0,0,0.45),
     0 0 12px rgba(212,175,55,0.18);
-  transform:translateY(18px) scale(0.96); /* 시작 위치 */
-  opacity:0;                        /* 시작 투명도 */
+  transform:translateY(18px) scale(0.96);             /* 시작 위치 */
+  opacity:0;                                          /* 시작 투명도 */
 }
 
-/* 팝업이 열렸을 때 카드 애니메이션 */
+/* 팝업 카드 등장 애니메이션 */
 .modal.show .modal-content{
   animation:modalPop 0.32s ease-out forwards;
 }
@@ -213,12 +257,12 @@ body{
   right:14px;
   font-size:30px;
   cursor:pointer;
-  color:#d4af37;                    /* 금색 */
+  color:#d4af37;                                      /* 금색 */
   line-height:1;
 }
 
 .close-btn:hover{
-  color:#f3d46b;                    /* 밝은 금색 */
+  color:#f3d46b;                                      /* 밝은 금색 */
 }
 
 /* =========================
@@ -232,7 +276,7 @@ body{
   color:#111;
   font-weight:bold;
   font-size:14px;
-  border-radius:999px;              /* 알약 형태 */
+  border-radius:999px;
   box-shadow:0 4px 10px rgba(212,175,55,0.25);
 }
 
@@ -243,9 +287,9 @@ body{
   width:110px;
   height:110px;
   margin:0 auto 18px;
-  border-radius:50%;                /* 원형 */
+  border-radius:50%;                                  /* 원형 */
   background:radial-gradient(circle at 30% 30%, #d9d9d9 0%, #a8a8a8 100%);
-  border:3px solid #d4af37;         /* 금색 테두리 */
+  border:3px solid #d4af37;                           /* 금색 테두리 */
   box-shadow:
     0 0 0 6px rgba(212,175,55,0.08),
     0 8px 18px rgba(0,0,0,0.28);
@@ -257,13 +301,13 @@ body{
 .modal-content h2{
   margin-top:0;
   margin-bottom:18px;
-  color:#d4af37;                    /* 금색 */
+  color:#d4af37;                                      /* 금색 */
   font-size:26px;
   font-weight:bold;
   letter-spacing:0.5px;
   border-bottom:1px solid rgba(212,175,55,0.35);
   padding-bottom:10px;
-  text-align:center;                /* 이름 가운데 정렬 */
+  text-align:center;                                  /* 이름 가운데 정렬 */
 }
 
 /* =========================
@@ -314,11 +358,11 @@ body{
 ========================= */
 @media (max-width:768px){
   .pdf-wrapper{
-    display:none;                   /* 모바일에서는 iframe 숨김 */
+    display:none;                                     /* 모바일에서는 iframe 숨김 */
   }
 
   .mobile-pdf{
-    display:block;                  /* 모바일에서는 PDF 버튼 표시 */
+    display:block;                                    /* 모바일에서는 PDF 버튼 표시 */
   }
 
   .modal-content{
@@ -344,5 +388,10 @@ body{
     font-size:13px;
     right:8px;
     bottom:8px;
+  }
+
+  .player{
+    max-width:100%;                                   /* 모바일에서는 꽉 차게 */
+    padding:12px 10px;
   }
 }
