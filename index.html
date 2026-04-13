@@ -19,17 +19,17 @@
 
     <div class="players">선수목록</div>
 
-    <div class="player">
+    <div class="player" onclick="showProfile('son')">
       <span class="player-img"></span>
       <span>1등선수 · 손창현</span>
     </div>
 
-    <div class="player">
+    <div class="player" onclick="showProfile('no')">
       <span class="player-img"></span>
       <span>2등선수 · 노재민</span>
     </div>
 
-    <div class="player">
+    <div class="player" onclick="showProfile('go')">
       <span class="player-img"></span>
       <span>3등선수 · 고유</span>
     </div>
@@ -49,5 +49,18 @@
 
   <div class="owner">사장: 서동현</div>
 
+  <!-- 선수 상세 프로필 팝업 -->
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeProfile()">&times;</span>
+      <h2 id="profileName"></h2>
+      <p id="profileRank"></p>
+      <p id="profilePosition"></p>
+      <p id="profileStyle"></p>
+      <p id="profileIntro"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
