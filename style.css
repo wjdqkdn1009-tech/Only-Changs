@@ -81,15 +81,18 @@ body{
   justify-content:center;           /* 전체 가운데 */
   gap:10px;                         /* 사진과 이름 간격 */
   cursor:pointer;                   /* 클릭 가능 표시 */
+  transition:0.2s;                  /* 부드러운 효과 */
 }
 
 /* 마우스를 올렸을 때 살짝 강조 */
 .player:hover{
-  opacity:0.85;
+  background:#f7f9fc;               /* 연한 배경 */
+  border-radius:8px;                /* 둥근 모서리 */
+  transform:scale(1.01);            /* 아주 살짝 확대 */
 }
 
 /* =========================
-   선수 프로필 사진 자리 (임시 회색 원)
+   선수 프로필 사진 자리 (현재는 회색 원)
 ========================= */
 .player-img{
   width:42px;                       /* 가로 크기 */
@@ -149,35 +152,39 @@ body{
   padding:6px 10px;                 /* 안쪽 여백 */
   border-radius:6px;                /* 둥근 모서리 */
   box-shadow:0 2px 6px rgba(0,0,0,0.08); /* 그림자 */
+  z-index:900;                      /* 너무 높이지 않음 (팝업보다 아래) */
 }
 
 /* =========================
-   프로필 팝업 배경
+   선수 상세 프로필 팝업 배경
+   이 부분이 없으면 팝업이 아래쪽에 그냥 나옴
 ========================= */
 .modal{
   display:none;                     /* 기본은 숨김 */
-  position:fixed;                   /* 화면 전체 덮기 */
-  z-index:1000;                     /* 다른 요소 위에 표시 */
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
+  position:fixed;                   /* 화면 전체 기준으로 고정 */
+  left:0;                           /* 왼쪽 시작점 */
+  top:0;                            /* 위쪽 시작점 */
+  width:100%;                       /* 화면 전체 너비 */
+  height:100%;                      /* 화면 전체 높이 */
+  z-index:1000;                     /* 다른 요소보다 위에 표시 */
   background:rgba(0,0,0,0.5);       /* 반투명 검정 배경 */
+  overflow:auto;                    /* 내용이 길면 스크롤 허용 */
 }
 
 /* =========================
-   프로필 팝업 내용 박스
+   팝업 내부 내용 박스
 ========================= */
 .modal-content{
-  background:#fff;                  /* 흰색 배경 */
+  position:relative;                /* 닫기 버튼 기준 */
   width:90%;                        /* 화면 기준 너비 */
   max-width:420px;                  /* 최대 너비 */
-  margin:15% auto;                  /* 가운데 정렬 */
+  margin:8vh auto;                  /* 화면 위쪽에서 약간 내려서 중앙 배치 */
   padding:24px 20px;                /* 안쪽 여백 */
+  background:#fff;                  /* 흰색 배경 */
   border-radius:12px;               /* 둥근 모서리 */
-  text-align:left;                  /* 왼쪽 정렬 */
   box-sizing:border-box;            /* padding 포함 계산 */
-  position:relative;                /* 닫기 버튼 기준 */
+  text-align:left;                  /* 왼쪽 정렬 */
+  box-shadow:0 10px 30px rgba(0,0,0,0.18); /* 그림자 */
 }
 
 /* =========================
@@ -190,19 +197,23 @@ body{
   font-size:28px;                   /* 크기 */
   cursor:pointer;                   /* 클릭 가능 */
   color:#666;                       /* 글자색 */
+  line-height:1;                    /* 높이 정리 */
 }
 
 /* 팝업 제목 */
 .modal-content h2{
   margin-top:0;                     /* 위 여백 제거 */
+  margin-bottom:14px;               /* 아래 여백 */
   color:#007bff;                    /* 파란색 */
+  font-size:24px;                   /* 제목 크기 */
 }
 
 /* 팝업 본문 */
 .modal-content p{
   margin:10px 0;                    /* 문단 간격 */
   color:#333;                       /* 글자색 */
-  line-height:1.5;                  /* 줄 간격 */
+  line-height:1.6;                  /* 줄 간격 */
+  font-size:16px;                   /* 글자 크기 */
 }
 
 /* =========================
@@ -218,8 +229,14 @@ body{
   }
 
   .modal-content{
-    margin:25% auto;                /* 모바일에서 팝업 위치 조금 아래 */
+    width:92%;                      /* 모바일에서 조금 더 넓게 */
+    margin:12vh auto;               /* 모바일 팝업 위치 */
+    padding:20px 16px;              /* 안쪽 여백 약간 축소 */
   }
-}
+
+  .owner{
+    font-size:13px;                 /* 모바일에서 약간 작게 */
+    right:8px;
+    bottom:8px;
   }
 }
