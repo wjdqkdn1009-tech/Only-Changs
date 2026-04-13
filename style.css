@@ -61,7 +61,7 @@ body{
 }
 
 /* =========================
-   섹션 제목 (선수목록, 회사 소개 자료)
+   섹션 제목
 ========================= */
 .players{
   font-size:21px;                   /* 제목 크기 */
@@ -84,15 +84,15 @@ body{
   transition:0.2s;                  /* 부드러운 효과 */
 }
 
-/* 마우스를 올렸을 때 살짝 강조 */
+/* 선수에 마우스를 올렸을 때 강조 */
 .player:hover{
   background:#f7f9fc;               /* 연한 배경 */
   border-radius:8px;                /* 둥근 모서리 */
-  transform:scale(1.01);            /* 아주 살짝 확대 */
+  transform:scale(1.01);            /* 살짝 확대 */
 }
 
 /* =========================
-   선수 프로필 사진 자리 (현재는 회색 원)
+   선수 프로필 사진 자리 (목록용)
 ========================= */
 .player-img{
   width:42px;                       /* 가로 크기 */
@@ -110,7 +110,7 @@ body{
 .pdf-wrapper{
   width:100%;                       /* 전체 너비 */
   overflow-x:auto;                  /* 가로 스크롤 허용 */
-  -webkit-overflow-scrolling:touch; /* 스크롤 부드럽게 */
+  -webkit-overflow-scrolling:touch; /* 부드러운 스크롤 */
   margin-top:8px;                   /* 위 간격 */
 }
 
@@ -152,68 +152,161 @@ body{
   padding:6px 10px;                 /* 안쪽 여백 */
   border-radius:6px;                /* 둥근 모서리 */
   box-shadow:0 2px 6px rgba(0,0,0,0.08); /* 그림자 */
-  z-index:900;                      /* 너무 높이지 않음 (팝업보다 아래) */
+  z-index:900;                      /* 팝업보다 아래 */
 }
 
 /* =========================
-   선수 상세 프로필 팝업 배경
-   이 부분이 없으면 팝업이 아래쪽에 그냥 나옴
+   팝업 배경
 ========================= */
 .modal{
   display:none;                     /* 기본은 숨김 */
-  position:fixed;                   /* 화면 전체 기준으로 고정 */
-  left:0;                           /* 왼쪽 시작점 */
-  top:0;                            /* 위쪽 시작점 */
-  width:100%;                       /* 화면 전체 너비 */
-  height:100%;                      /* 화면 전체 높이 */
-  z-index:1000;                     /* 다른 요소보다 위에 표시 */
-  background:rgba(0,0,0,0.5);       /* 반투명 검정 배경 */
-  overflow:auto;                    /* 내용이 길면 스크롤 허용 */
+  position:fixed;                   /* 화면 전체 기준 */
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  z-index:1000;                     /* 다른 요소보다 위 */
+  background:rgba(0,0,0,0.72);      /* 진한 반투명 배경 */
+  overflow:auto;                    /* 내용이 길면 스크롤 */
+  backdrop-filter:blur(2px);        /* 뒤 배경 흐림 */
+}
+
+/* 팝업이 열렸을 때 보이도록 처리 */
+.modal.show{
+  display:block;
+  animation:fadeIn 0.25s ease-out;  /* 팝업 배경 부드럽게 등장 */
 }
 
 /* =========================
-   팝업 내부 내용 박스
+   팝업 내부 카드
 ========================= */
 .modal-content{
   position:relative;                /* 닫기 버튼 기준 */
-  width:90%;                        /* 화면 기준 너비 */
-  max-width:420px;                  /* 최대 너비 */
-  margin:8vh auto;                  /* 화면 위쪽에서 약간 내려서 중앙 배치 */
-  padding:24px 20px;                /* 안쪽 여백 */
-  background:#fff;                  /* 흰색 배경 */
-  border-radius:12px;               /* 둥근 모서리 */
-  box-sizing:border-box;            /* padding 포함 계산 */
-  text-align:left;                  /* 왼쪽 정렬 */
-  box-shadow:0 10px 30px rgba(0,0,0,0.18); /* 그림자 */
+  width:90%;
+  max-width:460px;
+  margin:8vh auto;                  /* 화면 중앙 쪽 배치 */
+  padding:28px 22px;
+  background:linear-gradient(180deg,#1b1b1b 0%, #111 100%);
+  border:1px solid #d4af37;         /* 금색 테두리 */
+  border-radius:16px;               /* 둥근 모서리 */
+  box-sizing:border-box;
+  text-align:left;
+  color:#f5f5f5;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.45),
+    0 0 12px rgba(212,175,55,0.18);
+  transform:translateY(18px) scale(0.96); /* 시작 위치 */
+  opacity:0;                        /* 시작 투명도 */
+}
+
+/* 팝업이 열렸을 때 카드 애니메이션 */
+.modal.show .modal-content{
+  animation:modalPop 0.32s ease-out forwards;
 }
 
 /* =========================
    팝업 닫기 버튼
 ========================= */
 .close-btn{
-  position:absolute;                /* 박스 안에서 위치 고정 */
-  top:10px;                         /* 위쪽 */
-  right:14px;                       /* 오른쪽 */
-  font-size:28px;                   /* 크기 */
-  cursor:pointer;                   /* 클릭 가능 */
-  color:#666;                       /* 글자색 */
-  line-height:1;                    /* 높이 정리 */
+  position:absolute;
+  top:10px;
+  right:14px;
+  font-size:30px;
+  cursor:pointer;
+  color:#d4af37;                    /* 금색 */
+  line-height:1;
 }
 
-/* 팝업 제목 */
+.close-btn:hover{
+  color:#f3d46b;                    /* 밝은 금색 */
+}
+
+/* =========================
+   금색 배지
+========================= */
+.profile-badge{
+  display:inline-block;
+  margin-bottom:14px;
+  padding:6px 12px;
+  background:linear-gradient(180deg,#f3d46b 0%, #d4af37 100%);
+  color:#111;
+  font-weight:bold;
+  font-size:14px;
+  border-radius:999px;              /* 알약 형태 */
+  box-shadow:0 4px 10px rgba(212,175,55,0.25);
+}
+
+/* =========================
+   팝업 안의 큰 원형 프로필 자리
+========================= */
+.profile-large-img{
+  width:110px;
+  height:110px;
+  margin:0 auto 18px;
+  border-radius:50%;                /* 원형 */
+  background:radial-gradient(circle at 30% 30%, #d9d9d9 0%, #a8a8a8 100%);
+  border:3px solid #d4af37;         /* 금색 테두리 */
+  box-shadow:
+    0 0 0 6px rgba(212,175,55,0.08),
+    0 8px 18px rgba(0,0,0,0.28);
+}
+
+/* =========================
+   팝업 제목
+========================= */
 .modal-content h2{
-  margin-top:0;                     /* 위 여백 제거 */
-  margin-bottom:14px;               /* 아래 여백 */
-  color:#007bff;                    /* 파란색 */
-  font-size:24px;                   /* 제목 크기 */
+  margin-top:0;
+  margin-bottom:18px;
+  color:#d4af37;                    /* 금색 */
+  font-size:26px;
+  font-weight:bold;
+  letter-spacing:0.5px;
+  border-bottom:1px solid rgba(212,175,55,0.35);
+  padding-bottom:10px;
+  text-align:center;                /* 이름 가운데 정렬 */
 }
 
-/* 팝업 본문 */
+/* =========================
+   팝업 본문
+========================= */
 .modal-content p{
-  margin:10px 0;                    /* 문단 간격 */
-  color:#333;                       /* 글자색 */
-  line-height:1.6;                  /* 줄 간격 */
-  font-size:16px;                   /* 글자 크기 */
+  margin:12px 0;
+  color:#f2f2f2;
+  line-height:1.7;
+  font-size:16px;
+}
+
+/* 소개문 강조 */
+#profileIntro{
+  margin-top:18px;
+  padding:14px 16px;
+  background:rgba(212,175,55,0.08);
+  border-left:4px solid #d4af37;
+  border-radius:10px;
+  color:#fff8dc;
+}
+
+/* =========================
+   등장 애니메이션
+========================= */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes modalPop{
+  from{
+    transform:translateY(18px) scale(0.96);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
 }
 
 /* =========================
@@ -229,13 +322,26 @@ body{
   }
 
   .modal-content{
-    width:92%;                      /* 모바일에서 조금 더 넓게 */
-    margin:12vh auto;               /* 모바일 팝업 위치 */
-    padding:20px 16px;              /* 안쪽 여백 약간 축소 */
+    width:92%;
+    margin:12vh auto;
+    padding:22px 16px;
+  }
+
+  .modal-content h2{
+    font-size:22px;
+  }
+
+  .modal-content p{
+    font-size:15px;
+  }
+
+  .profile-large-img{
+    width:96px;
+    height:96px;
   }
 
   .owner{
-    font-size:13px;                 /* 모바일에서 약간 작게 */
+    font-size:13px;
     right:8px;
     bottom:8px;
   }
